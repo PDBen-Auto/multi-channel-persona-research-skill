@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Multi-Channel Persona Research Skill"
+message: "If this Skill helps your work, cite the repository and release tag."
+type: software
+authors:
+  - family-names: "PDBen-Auto"
+    given-names: "Maintainers"
+repository-code: "https://github.com/PDBen-Auto/multi-channel-persona-research-skill"
+license: "LicenseRef-Source-Available"
+keywords:
+  - user-research
+  - behavioral-persona
+  - customer-discovery
+  - ab-testing
+  - voice-of-customer
+  - agent-skills
