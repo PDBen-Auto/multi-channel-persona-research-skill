@@ -1,4 +1,5 @@
 from pathlib import Path
+import math
 import re
 import unittest
 
@@ -33,10 +34,28 @@ class PackageTests(unittest.TestCase):
         text = CASE.read_text(encoding="utf-8")
         defined = set(re.findall(r"^\| (SIM-\d{2}) \|", text, re.MULTILINE))
         cited = set(re.findall(r"SIM-\d{2}", text))
-        self.assertEqual(defined, {f"SIM-{i:02d}" for i in range(1, 7)})
+        self.assertEqual(defined, {f"SIM-{i:02d}" for i in range(1, 9)})
         self.assertEqual(cited, defined)
-        for phrase in ("完全虚构", "没有真实流量", "随机分配", "护栏指标"):
+        for phrase in ("完全虚构", "没有真实流量", "随机分配", "护栏指标", "教学模拟", "模拟决策记录"):
             self.assertIn(phrase, text)
+
+        segment_counts = []
+        for label in ("单人使用", "多人使用"):
+            match = re.search(
+                rf"^\| {label} \| (\d+) / ([\d,]+).*?\| (\d+) / ([\d,]+)",
+                text,
+                re.MULTILINE,
+            )
+            self.assertIsNotNone(match, label)
+            segment_counts.append(tuple(int(value.replace(",", "")) for value in match.groups()))
+        a_events, a_total, b_events, b_total = map(sum, zip(*segment_counts))
+        self.assertEqual((a_events, a_total, b_events, b_total), (384, 1200, 330, 1200))
+        a_rate, b_rate = a_events / a_total, b_events / b_total
+        difference = a_rate - b_rate
+        standard_error = math.sqrt(a_rate * (1 - a_rate) / a_total + b_rate * (1 - b_rate) / b_total)
+        self.assertAlmostEqual(difference * 100, 4.5)
+        self.assertIn(f"+{(difference - 1.96 * standard_error) * 100:.2f}", text)
+        self.assertIn(f"+{(difference + 1.96 * standard_error) * 100:.2f}", text)
 
     def test_public_package_has_no_source_identifiers(self):
         docs = [ROOT / "SKILL.md", CASE, ROOT / "references" / "collection-playbook.md", ROOT / "README.md", ROOT / "README.en.md"]

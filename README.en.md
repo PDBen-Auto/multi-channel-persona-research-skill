@@ -39,7 +39,7 @@ Offline analysis of supplied material needs no account, proprietary API, or paid
 
 ## Synthetic example
 
-The [fully synthetic appointment-onboarding case](references/synthetic-case.md) demonstrates six invented observations across three source types, two behavioral hypotheses, a blinded variant comparison, and a proposed randomized test with a seven-day first-success metric. It contains no real users, source URLs, or measured win rate.
+The [fully synthetic appointment-onboarding case](references/synthetic-case.md) includes four invented source types, an evidence ledger, two behavioral hypotheses, a blinded variant comparison, and a complete **simulated** A/B report with funnel metrics, pre-specified segments, guardrails, and a decision record. All counts and effects are constructed for teaching; they are not observed results or predictions.
 
 ## Boundaries
 
