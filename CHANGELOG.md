@@ -1,9 +1,10 @@
 # Changelog
 
-## Unreleased
+## v0.1.1 - 2026-10-27
 
 - Expanded the fully synthetic case with multi-channel evidence counts, a simulated A/B results table, guardrails, segment analysis, and a decision record.
 - Clarified that simulated example outcomes are never evidence of a real product effect.
+- Added a repeatable release workflow that validates and packages the installable Skill with a SHA-256 checksum.
 
 ## v0.1.0 - 2026-10-27
 

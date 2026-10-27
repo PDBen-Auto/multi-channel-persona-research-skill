@@ -5,7 +5,7 @@
 
 把评论、社区讨论、客服摘要和产品行为中的零散线索，整理成**有来源、有偏差说明、能指导方案选择的行为画像**。适用于软件、实体产品、服务和内容体验。
 
-[English overview](README.en.md) · [查看虚构案例](references/synthetic-case.md) · [采集与画像维度](references/collection-playbook.md)
+[English overview](README.en.md) · [查看虚构案例](references/synthetic-case.md) · [采集与画像维度](references/collection-playbook.md) · [下载最新版 ZIP](https://github.com/PDBen-Auto/multi-channel-persona-research-skill/releases/latest)
 
 ## 解决什么问题
 
