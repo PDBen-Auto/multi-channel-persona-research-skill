@@ -25,7 +25,9 @@ class PackageTests(unittest.TestCase):
         refs = re.findall(r"\]\((references/[^)]+)\)", text)
         self.assertEqual(
             set(refs),
-            {"references/collection-playbook.md", "references/synthetic-case.md"},
+            {"references/collection-playbook.md", "references/synthetic-case.md"}
+            | {f"references/i18n/{locale}.md" for locale in
+               ("zh-CN", "en", "ja", "ko", "de", "fr", "es", "pt")},
         )
         for ref in refs:
             self.assertTrue((ROOT / ref).is_file(), ref)

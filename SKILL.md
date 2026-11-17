@@ -80,3 +80,11 @@ description: 从获准使用的评论、社区、客服和行为数据中收集�
 需要学习完整用法或向用户展示时，读 [完全虚构的预约工具案例](references/synthetic-case.md)。该案例演示来源台账、证据编码、两类行为画像、盲化方案对比及完整的模拟 A/B 结果和决策记录；所有数字均为教学构造，不代表真实研究。
 
 完成时确认：每项关键结论有证据 ID 或明确的 `unknown`；样本与渠道偏差可见；方案预估和真实 A/B 结果分栏；没有可识别个人内容；输出能让下一位研究者按相同规则复核或继续采集。
+
+<!-- skill-i18n:start -->
+## Output language and localized operating guides
+
+[简体中文](references/i18n/zh-CN.md) | [English](references/i18n/en.md) | [日本語](references/i18n/ja.md) | [한국어](references/i18n/ko.md) | [Deutsch](references/i18n/de.md) | [Français](references/i18n/fr.md) | [Español](references/i18n/es.md) | [Português](references/i18n/pt.md)
+
+Use the user's explicitly requested output language; otherwise follow the language of the request. Read only the corresponding localized guide when needed. Preserve the workflow, prerequisites, authorization gates, skill IDs, commands, schema keys, enum values, units, original evidence and any language-specific canonical fields. Do not infer marketplace, currency or jurisdiction from language. Localized guides summarize the operating contract; read the relevant canonical references for exact schemas, calculations and stage-specific procedures. Example interfaces, historical evidence and script diagnostics retain their original language unless separately adapted.
+<!-- skill-i18n:end -->
